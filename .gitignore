@@ -3,3 +3,7 @@ full_profiler/full_profiler.egg-info/
 *.dat
 *.png
 *.txt
+*.prof
+*.pyc
+full_profiler/__pycache__/
+full_profiler/__pycache__/*

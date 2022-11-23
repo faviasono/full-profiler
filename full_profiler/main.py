@@ -13,8 +13,9 @@ SNAKEVIZ_COMMAND = "snakeviz program.prof"
 
 app = typer.Typer()
 
+
 def create_output_file(path):
-    file_name = "full_profiler_out_{}.txt".format(path.split()[0])
+    file_name = "full_profiler_out_{}_{}.txt".format(path.split('.')[-2], dt.datetime.now().timestamp())
     return file_name
 
 @app.command()
@@ -54,7 +55,7 @@ def time_memory(path: str):
         print('It must be a Python scipt')
         typer.Abort()
     try:
-        with open(create_output_file(path), 'w') as f:
+        with open(create_output_file(path), 'x') as f:
             subprocess.call(MPROF_RUN_COMMAND.format(path).split(), stdout=f)
             title = input('Insert title plot\n')
             os_put = title.replace(' ','_').strip().lower()
@@ -74,13 +75,12 @@ def cpu_time(path: str, plot: bool = False):
         raise  typer.Abort()
        
     try:
-        with open(create_output_file(path), 'w') as f:
+        with open(create_output_file(path), 'x') as f:
             subprocess.call(CPROFILE_COMMAND.format(path).split(), stdout= f)
             if plot:
                 subprocess.call(SNAKEVIZ_COMMAND.split(), stdout= f)
     except OSError as e:
         typer.Abort()
-
 
 
 if __name__ == "__main__":
