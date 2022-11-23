@@ -23,7 +23,7 @@ python -m full_profiler [ARGS] [OPTIONS]
 Use the --help flag to see the available commands.For instance, the command `python -m full_profiler --help` will generate the following output:
 
 
-![example](example/static/help_example.png "Example when using --help flag")
+![example](example/help_example.png "Example when using --help flag")
 
 
 
