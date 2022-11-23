@@ -1,2 +1,5 @@
 full_profiler/full_profiler.egg-info/
 *.egg-info
+*.dat
+*.png
+*.txt
