@@ -18,14 +18,20 @@ def create_output_file(path):
     return file_name
 
 @app.command()
-def filesize(path: str):
+def file_size(path: str):
+    """
+    Return file size of the script
+    """
     if not os.path.exists(path):
         raise ValueError
     size_ = f"{os.path.getsize(path)} bytes"
     print(size_) 
 
 @app.command()
-def inlinememory(path: str):
+def inline_memory(path: str):
+    """
+    Use memory_profiler to generate statistics and save in full_profiler_out_{filename}.txt file
+    """
     if not os.path.exists(path):
         raise ValueError
     if not path.endswith('.py'):
@@ -38,7 +44,10 @@ def inlinememory(path: str):
 
 
 @app.command()
-def timememory(path: str):
+def time_memory(path: str):
+    """
+    Use memory_profiler to generate statistics and plot results in file_name.png file
+    """
     if not os.path.exists(path):
         raise ValueError
     if not path.endswith('.py'):
@@ -53,7 +62,10 @@ def timememory(path: str):
         print('Error' + str(e))
 
 @app.command()
-def cputime(path: str, plot: bool = False):
+def cpu_time(path: str, plot: bool = False):
+    """
+    Use cProfile to generate statistics program.prof and plot results using snakeviz in browser
+    """
     if not os.path.exists(path):
         raise ValueError
     if not path.endswith('.py'):
