@@ -10,6 +10,7 @@ MPROF_PLOT_COMMAND = "mprof plot --flame --slope --title {} --output {}.png"
 MPROFILE_MEM_COMMAND = "python -m memory_profiler {} > output_profiler"
 CPROFILE_COMMAND = "python -m cProfile -o program.prof {}"
 SNAKEVIZ_COMMAND = "snakeviz program.prof"
+
 app = typer.Typer()
 
 def create_output_file(path):
