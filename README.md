@@ -33,6 +33,8 @@ Use the --help flag to see the available commands. For instance, the command `py
 
 ## TODO
 
-[ ] Get Metrics from  program.prof
+[ ] Get Metrics from  program.prof (e.g., max usage, peak usage)
+
+[ ] Automatically parse information from text referring to `model.predict` or `session.run` codes.
 
 [ ] Add results in common folder (handle paths)
