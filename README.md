@@ -23,7 +23,7 @@ python -m full_profiler [ARGS] [OPTIONS]
 In order to collect in-line memory information using `memory_profiler` you'll need to decorate your function with `memory_profiler.profile` function.
 Take a look at the `example/example.py` or to the [official page](https://github.com/pythonprofilers/memory_profiler) of the tool 
 
-Use the --help flag to see the available commands. For instance, the command `python -m full_profiler --help` will generate the following output:
+Use the ` --help`  flag to see the available commands. For instance, the command `python -m full_profiler --help` will generate the following output:
 
 
 ![example](example/help_example.png "Example when using --help flag")
